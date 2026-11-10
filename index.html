@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0B0D">
+  <meta name="description" content="NIORVEN — Criação de imagens publicitárias que valorizam sua marca.">
+
+  <title>NIORVEN — Criatividade que impulsiona</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wine: '#8D405B',
+            dark: '#0B0B0D',
+            surface: '#141416'
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0B0B0D;
+      color: #F5F5F5;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #D9B7C2, #984B68);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-glow {
+      background: radial-gradient(
+        ellipse at 50% 40%,
+        rgba(141,64,91,.18),
+        transparent 65%
+      );
+    }
+
+    .card {
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(141,64,91,.7);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- CABEÇALHO -->
+  <header class="fixed top-0 w-full z-50 bg-dark/85 backdrop-blur-lg border-b border-white/5">
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      <a href="#" class="font-heading font-bold tracking-[.3em] text-xl">
+        NIORVEN<span class="text-wine">.</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-9 text-sm text-gray-400">
+        <a href="#inicio" class="hover:text-white transition">Início</a>
+        <a href="#sobre" class="hover:text-white transition">Sobre</a>
+        <a href="#servicos" class="hover:text-white transition">Serviços</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO PRINCIPAL -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center text-center px-6 pt-28 hero-glow">
+
+      <div class="max-w-4xl mx-auto">
+
+        <span class="inline-block text-wine text-xs tracking-[.35em] uppercase mb-8">
+          Estúdio criativo · NIORVEN
+        </span>
+
+        <h1 class="font-heading font-semibold text-4xl sm:text-6xl md:text-7xl leading-tight">
+          Sua marca merece
+          <span class="gradient-text">mais destaque.</span>
+        </h1>
+
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mt-7 leading-relaxed">
+          Criamos imagens publicitárias que valorizam seus produtos,
+          fortalecem sua identidade e despertam o interesse dos seus clientes.
+        </p>
+
+        <!-- ÚNICA CHAMADA PARA AÇÃO -->
+        <a
+          href="https://wa.me/67984759943"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-8 bg-wine hover:bg-[#713249] transition px-9 py-4 rounded-full font-medium text-sm"
+        >
+          Fale conosco pelo WhatsApp
+        </a>
+
+        <div class="mt-24 border-t border-white/10 pt-7 flex justify-center gap-5 sm:gap-10 text-xs tracking-widest text-gray-500 uppercase">
+          <span>Design</span>
+          <span>•</span>
+          <span>Criatividade</span>
+          <span>•</span>
+          <span>Qualidade</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="sobre" class="py-24 px-6">
+
+      <div class="max-w-4xl mx-auto text-center">
+
+        <span class="text-wine text-xs tracking-[.3em] uppercase">
+          Quem somos
+        </span>
+
+        <h2 class="font-heading text-3xl sm:text-4xl font-semibold mt-5">
+          Imagens que valorizam
+          <span class="gradient-text">o seu negócio.</span>
+        </h2>
+
+        <p class="text-gray-400 leading-relaxed mt-7 max-w-2xl mx-auto">
+          A NIORVEN é dedicada à criação de imagens publicitárias
+          para negócios de alimentação. Nosso objetivo é transformar
+          a apresentação dos seus produtos em uma comunicação visual
+          mais profissional, atraente e marcante.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SERVIÇOS E BENEFÍCIOS -->
+    <section id="servicos" class="py-24 px-6 bg-[#101012] border-y border-white/5">
+
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-14">
+
+          <span class="text-wine text-xs tracking-[.3em] uppercase">
+            O que oferecemos
+          </span>
+
+          <h2 class="font-heading text-3xl sm:text-4xl font-semibold mt-5">
+            Um novo olhar para sua marca.
+          </h2>
+
+          <p class="text-gray-500 mt-4">
+            Cuidado visual em cada detalhe.
+          </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article class="card bg-surface border border-white/10 rounded-2xl p-8">
+
+            <div class="text-wine text-3xl mb-7">✳</div>
+
+            <h3 class="font-heading text-lg font-semibold mb-4">
+              Imagens profissionais
+            </h3>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Apresentações visuais elaboradas para destacar
+              os detalhes e valorizar seus produtos.
+            </p>
+
+          </article>
+
+          <article class="card bg-surface border border-white/10 rounded-2xl p-8">
+
+            <div class="text-wine text-3xl mb-7">◈</div>
+
+            <h3 class="font-heading text-lg font-semibold mb-4">
+              Identidade visual
+            </h3>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Comunicação visual consistente para transmitir
+              profissionalismo e fortalecer sua marca.
+            </p>
+
+          </article>
+
+          <article class="card bg-surface border border-white/10 rounded-2xl p-8">
+
+            <div class="text-wine text-3xl mb-7">↗</div>
+
+            <h3 class="font-heading text-lg font-semibold mb-4">
+              Divulgação estratégica
+            </h3>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Artes promocionais pensadas para chamar atenção
+              e apresentar seus produtos com mais impacto.
+            </p>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ENCERRAMENTO -->
+    <section class="py-28 px-6 text-center hero-glow">
+
+      <div class="max-w-2xl mx-auto">
+
+        <span class="text-wine text-xs tracking-[.3em] uppercase">
+          NIORVEN
+        </span>
+
+        <h2 class="font-heading text-3xl sm:text-5xl font-semibold mt-6">
+          Criatividade que
+          <span class="gradient-text">impulsiona.</span>
+        </h2>
+
+        <p class="text-gray-400 mt-6 leading-relaxed">
+          Sua marca merece uma apresentação à altura
+          da qualidade dos seus produtos.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="border-t border-white/10 py-8 px-6">
+
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+
+      <span class="font-heading font-bold tracking-[.3em]">
+        NIORVEN<span class="text-wine">.</span>
+      </span>
+
+      <p class="text-gray-500 text-xs text-center">
+        Criatividade que impulsiona.
+      </p>
+
+      <div class="flex items-center gap-5 text-gray-500 text-xs">
+
+        <a
+          href="mailto:niorvensupport@gmail.com"
+          class="flex items-center gap-2 hover:text-white transition"
+          aria-label="Enviar e-mail para o suporte NIORVEN"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+          Support
+        </a>
+
+        <a
+          href="https://instagram.com/niorven.studio"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 hover:text-white transition"
+          aria-label="Visitar Instagram da NIORVEN"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="18" cy="6" r=".8" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+
+      </div>
+
+      <p class="text-gray-600 text-xs">
+        © <span id="year"></span> NIORVEN. Todos os direitos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+ 
