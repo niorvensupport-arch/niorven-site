@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -66,6 +65,122 @@
       transform: translateY(-6px);
       border-color: rgba(141,64,91,.7);
     }
+
+    /* CARROSSEL */
+    .portfolio-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #141416;
+      border: 1px solid rgba(255,255,255,.09);
+      aspect-ratio: 16 / 10;
+    }
+
+    .portfolio-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.035);
+      transition: opacity .65s ease, transform .9s ease;
+      pointer-events: none;
+    }
+
+    .portfolio-slide.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .portfolio-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-slide::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.62));
+      pointer-events: none;
+    }
+
+    .portfolio-arrow {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(11,11,13,.72);
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+      font-size: 25px;
+      transition: background .25s ease, border-color .25s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .portfolio-arrow:hover {
+      background: #8D405B;
+      border-color: #8D405B;
+    }
+
+    .portfolio-arrow.prev {
+      left: 18px;
+    }
+
+    .portfolio-arrow.next {
+      right: 18px;
+    }
+
+    .portfolio-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.3);
+      transition: all .3s ease;
+    }
+
+    .portfolio-dot.active {
+      width: 25px;
+      background: #A85D78;
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-frame {
+        aspect-ratio: 4 / 5;
+      }
+
+      .portfolio-arrow {
+        width: 39px;
+        height: 39px;
+        font-size: 21px;
+      }
+
+      .portfolio-arrow.prev {
+        left: 12px;
+      }
+
+      .portfolio-arrow.next {
+        right: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .portfolio-slide,
+      .portfolio-dot {
+        transition: none;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
   </style>
 </head>
 
@@ -83,6 +198,7 @@
         <a href="#inicio" class="hover:text-white transition">Início</a>
         <a href="#sobre" class="hover:text-white transition">Sobre</a>
         <a href="#servicos" class="hover:text-white transition">Serviços</a>
+        <a href="#portfolio" class="hover:text-white transition">Portfólio</a>
       </div>
 
     </nav>
@@ -109,7 +225,6 @@
           fortalecem sua identidade e despertam o interesse dos seus clientes.
         </p>
 
-        <!-- ÚNICA CHAMADA PARA AÇÃO -->
         <a
           href="https://wa.me/67984759943"
           target="_blank"
@@ -178,51 +293,154 @@
         <div class="grid md:grid-cols-3 gap-6">
 
           <article class="card bg-surface border border-white/10 rounded-2xl p-8">
-
             <div class="text-wine text-3xl mb-7">✳</div>
-
             <h3 class="font-heading text-lg font-semibold mb-4">
               Imagens profissionais
             </h3>
-
             <p class="text-gray-400 text-sm leading-relaxed">
               Apresentações visuais elaboradas para destacar
               os detalhes e valorizar seus produtos.
             </p>
-
           </article>
 
           <article class="card bg-surface border border-white/10 rounded-2xl p-8">
-
             <div class="text-wine text-3xl mb-7">◈</div>
-
             <h3 class="font-heading text-lg font-semibold mb-4">
               Identidade visual
             </h3>
-
             <p class="text-gray-400 text-sm leading-relaxed">
               Comunicação visual consistente para transmitir
               profissionalismo e fortalecer sua marca.
             </p>
-
           </article>
 
           <article class="card bg-surface border border-white/10 rounded-2xl p-8">
-
             <div class="text-wine text-3xl mb-7">↗</div>
-
             <h3 class="font-heading text-lg font-semibold mb-4">
               Divulgação estratégica
             </h3>
-
             <p class="text-gray-400 text-sm leading-relaxed">
               Artes promocionais pensadas para chamar atenção
               e apresentar seus produtos com mais impacto.
             </p>
-
           </article>
 
         </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO / CARROSSEL -->
+    <section id="portfolio" class="py-24 px-6">
+
+      <div class="max-w-5xl mx-auto">
+
+        <div class="text-center mb-12">
+
+          <span class="text-wine text-xs tracking-[.3em] uppercase">
+            Nosso portfólio
+          </span>
+
+          <h2 class="font-heading text-3xl sm:text-4xl font-semibold mt-5">
+            O sabor também começa
+            <span class="gradient-text">pelos olhos.</span>
+          </h2>
+
+          <p class="text-gray-500 mt-4">
+            Uma apresentação que transforma a percepção dos seus produtos.
+          </p>
+
+        </div>
+
+        <div
+          class="portfolio-frame"
+          id="portfolioCarousel"
+          aria-label="Galeria de imagens de produtos"
+          aria-roledescription="carrossel"
+        >
+
+          <!-- FOTO 1 -->
+          <div class="portfolio-slide active" aria-hidden="false">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=85"
+              alt="Hambúrguer artesanal em fotografia gastronômica"
+              loading="eager"
+            >
+            <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
+              <span class="text-xs uppercase tracking-[.25em] text-white/70">
+                NIORVEN · Food Design
+              </span>
+              <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
+                Hambúrgueres
+              </h3>
+            </div>
+          </div>
+
+          <!-- FOTO 2 -->
+          <div class="portfolio-slide" aria-hidden="true">
+            <img
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=85"
+              alt="Hambúrguer artesanal com ingredientes frescos"
+              loading="lazy"
+            >
+            <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
+              <span class="text-xs uppercase tracking-[.25em] text-white/70">
+                NIORVEN · Food Design
+              </span>
+              <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
+                Apresentação premium
+              </h3>
+            </div>
+          </div>
+
+          <!-- FOTO 3 -->
+          <div class="portfolio-slide" aria-hidden="true">
+            <img
+              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=85"
+              alt="Pizza fotografada em apresentação gastronômica"
+              loading="lazy"
+            >
+            <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
+              <span class="text-xs uppercase tracking-[.25em] text-white/70">
+                NIORVEN · Food Design
+              </span>
+              <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
+                Pizzas
+              </h3>
+            </div>
+          </div>
+
+          <!-- SETAS -->
+          <button
+            type="button"
+            class="portfolio-arrow prev"
+            id="portfolioPrev"
+            aria-label="Imagem anterior"
+          >
+            &#8592;
+          </button>
+
+          <button
+            type="button"
+            class="portfolio-arrow next"
+            id="portfolioNext"
+            aria-label="Próxima imagem"
+          >
+            &#8594;
+          </button>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <div class="flex justify-center items-center gap-3 mt-7" id="portfolioDots">
+          <button class="portfolio-dot active" type="button" aria-label="Ir para imagem 1" aria-current="true"></button>
+          <button class="portfolio-dot" type="button" aria-label="Ir para imagem 2"></button>
+          <button class="portfolio-dot" type="button" aria-label="Ir para imagem 3"></button>
+        </div>
+
+        <p class="text-center text-gray-600 text-xs mt-5 tracking-wide">
+          Explore nossos exemplos
+        </p>
+
       </div>
     </section>
 
@@ -303,8 +521,60 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FUNCIONAMENTO DO CARROSSEL
+    const carousel = document.getElementById('portfolioCarousel');
+    const slides = Array.from(carousel.querySelectorAll('.portfolio-slide'));
+    const dots = Array.from(document.querySelectorAll('.portfolio-dot'));
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        const active = i === currentSlide;
+        slide.classList.toggle('active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+
+      dots.forEach((dot, i) => {
+        const active = i === currentSlide;
+        dot.classList.toggle('active', active);
+
+        if (active) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    document.getElementById('portfolioNext').addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+    });
+
+    document.getElementById('portfolioPrev').addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // NAVEGAÇÃO PELO TECLADO
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        showSlide(currentSlide + 1);
+      }
+
+      if (event.key === 'ArrowLeft') {
+        showSlide(currentSlide - 1);
+      }
+    });
+
+    carousel.setAttribute('tabindex', '0');
   </script>
 
 </body>
 </html>
- 
