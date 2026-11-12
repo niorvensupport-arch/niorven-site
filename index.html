@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B0B0D">
-  <meta name="description" content="NIORVEN — Imagens publicitárias premium para alimentos, produtos e marcas. Conheça também a NIORVEN Academy.">
-
+  <meta name="description" content="NIORVEN — Imagens publicitárias premium para alimentos, produtos e marcas.">
   <title>NIORVEN — Criatividade que impulsiona</title>
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B0B0D'/%3E%3Cpath d='M14 12h11l18 22V12h11v40H43L25 30v22H14z' fill='%23fff'/%3E%3C/svg%3E">
@@ -38,7 +37,6 @@
   <style>
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
     }
 
     body {
@@ -106,10 +104,7 @@
       content: "";
       position: absolute;
       inset: 45% 0 0;
-      background: linear-gradient(
-        transparent,
-        rgba(0,0,0,.72)
-      );
+      background: linear-gradient(transparent, rgba(0,0,0,.72));
       pointer-events: none;
     }
 
@@ -166,140 +161,37 @@
 
     /* NIORVEN ACADEMY */
 
-    #academy {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          ellipse at 75% 45%,
-          rgba(255,255,255,.045),
-          transparent 55%
-        ),
-        #0B0B0D;
-      border-top: 1px solid rgba(255,255,255,.07);
-      border-bottom: 1px solid rgba(255,255,255,.07);
-    }
-
-    .academy-content {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.7,.2,1);
-    }
-
-    #academy.is-visible .academy-content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .academy-image-link {
+    .academy-card {
       display: block;
-      position: relative;
-      border-radius: 18px;
+      width: 100%;
+      max-width: 390px;
+      margin: 0 auto;
       overflow: hidden;
-      background: #050505;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,.13);
-      box-shadow: 0 25px 80px rgba(0,0,0,.55);
+      background: #080808;
+      box-shadow: 0 15px 45px rgba(0,0,0,.3);
       transition:
-        transform .6s cubic-bezier(.2,.7,.2,1),
-        border-color .4s ease,
-        box-shadow .5s ease;
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
     }
 
-    .academy-image-link::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(255,255,255,.13),
-        transparent 35%,
-        transparent 70%,
-        rgba(255,255,255,.08)
-      );
-      opacity: .35;
-      transition: opacity .5s ease;
-      pointer-events: none;
+    .academy-card:hover {
+      transform: translateY(-9px) scale(1.025);
+      border-color: rgba(255,255,255,.55);
+      box-shadow: 0 25px 65px rgba(0,0,0,.6);
     }
 
-    .academy-image-link img {
+    .academy-card img {
       display: block;
       width: 100%;
       height: auto;
-      transition:
-        transform .8s cubic-bezier(.2,.7,.2,1),
-        filter .5s ease;
+      transition: filter .4s ease;
     }
 
-    .academy-image-link:hover {
-      transform: translateY(-9px) scale(1.015);
-      border-color: rgba(255,255,255,.45);
-      box-shadow:
-        0 35px 90px rgba(0,0,0,.7),
-        0 0 35px rgba(255,255,255,.07);
-    }
-
-    .academy-image-link:hover img {
-      transform: scale(1.035);
-      filter: brightness(1.08);
-    }
-
-    .academy-image-link:hover::after {
-      opacity: .8;
-    }
-
-    .academy-cta {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      overflow: hidden;
-      background: #F5F5F5;
-      color: #0B0B0D;
-      border: 1px solid #F5F5F5;
-      transition:
-        background .3s ease,
-        color .3s ease,
-        transform .3s ease,
-        box-shadow .3s ease;
-    }
-
-    .academy-cta:hover {
-      background: transparent;
-      color: #FFFFFF;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(255,255,255,.09);
-    }
-
-    .academy-cta span:last-child {
-      transition: transform .3s ease;
-    }
-
-    .academy-cta:hover span:last-child {
-      transform: translateX(5px);
-    }
-
-    .academy-feature {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #C7C7C7;
-      font-size: 13px;
-    }
-
-    .academy-feature-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 50%;
-      color: white;
-      flex-shrink: 0;
-      font-size: 12px;
+    .academy-card:hover img {
+      filter: brightness(1.12);
     }
 
     @media (max-width: 640px) {
@@ -321,29 +213,21 @@
         right: 12px;
       }
 
-      .academy-image-link {
-        max-width: 390px;
-        margin: 0 auto;
+      .academy-card {
+        max-width: 330px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .portfolio-slide,
       .portfolio-dot,
-      .academy-content,
-      .academy-image-link,
-      .academy-image-link img,
-      .academy-cta {
+      .academy-card,
+      .academy-card img {
         transition: none;
       }
 
       html {
         scroll-behavior: auto;
-      }
-
-      .academy-content {
-        opacity: 1;
-        transform: none;
       }
     }
   </style>
@@ -356,7 +240,7 @@
   <header class="fixed top-0 w-full z-50 bg-dark/85 backdrop-blur-lg border-b border-white/5">
     <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
 
-      <a href="#" class="font-heading font-bold tracking-[.3em] text-xl">
+      <a href="#inicio" class="font-heading font-bold tracking-[.3em] text-xl">
         NIORVEN<span class="text-wine">.</span>
       </a>
 
@@ -365,7 +249,7 @@
         <a href="#sobre" class="hover:text-white transition">Sobre</a>
         <a href="#servicos" class="hover:text-white transition">Serviços</a>
         <a href="#portfolio" class="hover:text-white transition">Portfólio</a>
-        <a href="#academy" class="text-white hover:text-gray-300 transition">NIORVEN Academy</a>
+        <a href="#academy" class="hover:text-white transition">Academy</a>
       </div>
 
     </nav>
@@ -446,7 +330,6 @@
       <div class="max-w-6xl mx-auto">
 
         <div class="text-center mb-14">
-
           <span class="text-wine text-xs tracking-[.3em] uppercase">
             O que oferecemos
           </span>
@@ -458,18 +341,15 @@
           <p class="text-gray-500 mt-4">
             Cuidado visual em cada detalhe.
           </p>
-
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
 
           <article class="card bg-surface border border-white/10 rounded-2xl p-8">
             <div class="text-wine text-3xl mb-7">✳</div>
-
             <h3 class="font-heading text-lg font-semibold mb-4">
               Imagens profissionais
             </h3>
-
             <p class="text-gray-400 text-sm leading-relaxed">
               Apresentações visuais elaboradas para destacar
               os detalhes e valorizar seus produtos.
@@ -478,11 +358,9 @@
 
           <article class="card bg-surface border border-white/10 rounded-2xl p-8">
             <div class="text-wine text-3xl mb-7">◈</div>
-
             <h3 class="font-heading text-lg font-semibold mb-4">
               Identidade visual
             </h3>
-
             <p class="text-gray-400 text-sm leading-relaxed">
               Comunicação visual consistente para transmitir
               profissionalismo e fortalecer sua marca.
@@ -491,11 +369,9 @@
 
           <article class="card bg-surface border border-white/10 rounded-2xl p-8">
             <div class="text-wine text-3xl mb-7">↗</div>
-
             <h3 class="font-heading text-lg font-semibold mb-4">
               Divulgação estratégica
             </h3>
-
             <p class="text-gray-400 text-sm leading-relaxed">
               Artes promocionais pensadas para chamar atenção
               e apresentar seus produtos com mais impacto.
@@ -513,7 +389,6 @@
       <div class="max-w-5xl mx-auto">
 
         <div class="text-center mb-16">
-
           <span class="text-wine text-xs tracking-[.3em] uppercase">
             Nosso portfólio
           </span>
@@ -528,7 +403,6 @@
             e descubra como uma imagem pode transformar a percepção
             de um produto.
           </p>
-
         </div>
 
         <!-- CARROSSEL 1: GASTRONOMIA -->
@@ -536,7 +410,6 @@
         <div class="portfolio-section">
 
           <div class="text-center mb-8">
-
             <span class="text-wine text-xs tracking-[.3em] uppercase">
               01 · Gastronomia
             </span>
@@ -548,93 +421,36 @@
             <p class="text-gray-500 text-sm mt-3">
               Apresentações gastronômicas com personalidade e impacto visual.
             </p>
-
           </div>
 
-          <div
-            class="portfolio-frame"
-            id="foodCarousel"
-            aria-label="Portfólio de gastronomia"
-            aria-roledescription="carrossel"
-          >
+          <div class="portfolio-frame" id="foodCarousel" aria-label="Portfólio de gastronomia" aria-roledescription="carrossel">
 
             <div class="portfolio-slide active" aria-hidden="false">
-
-              <img
-                src="Café.png"
-                alt="Xícara de café premium com grãos de café e iluminação quente"
-                loading="eager"
-              >
-
+              <img src="Café.png" alt="Xícara de café premium com grãos de café e iluminação quente" loading="eager">
               <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
-                <span class="text-xs uppercase tracking-[.25em] text-white/70">
-                  NIORVEN · Food Design
-                </span>
-
-                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
-                  Café
-                </h3>
+                <span class="text-xs uppercase tracking-[.25em] text-white/70">NIORVEN · Food Design</span>
+                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">Café</h3>
               </div>
-
             </div>
 
             <div class="portfolio-slide" aria-hidden="true">
-
-              <img
-                src="Tigela%20a%C3%A7a%C3%AD.png"
-                alt="Bowl de açaí com frutas frescas e granola"
-                loading="lazy"
-              >
-
+              <img src="Tigela%20a%C3%A7a%C3%AD.png" alt="Bowl de açaí com frutas frescas e granola" loading="lazy">
               <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
-                <span class="text-xs uppercase tracking-[.25em] text-white/70">
-                  NIORVEN · Food Design
-                </span>
-
-                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
-                  Açaí
-                </h3>
+                <span class="text-xs uppercase tracking-[.25em] text-white/70">NIORVEN · Food Design</span>
+                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">Açaí</h3>
               </div>
-
             </div>
 
             <div class="portfolio-slide" aria-hidden="true">
-
-              <img
-                src="Hamb%C3%BArguer.png"
-                alt="Hambúrguer artesanal fotografado em apresentação premium"
-                loading="lazy"
-              >
-
+              <img src="Hamb%C3%BArguer.png" alt="Hambúrguer artesanal fotografado em apresentação premium" loading="lazy">
               <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
-                <span class="text-xs uppercase tracking-[.25em] text-white/70">
-                  NIORVEN · Food Design
-                </span>
-
-                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
-                  Hambúrgueres
-                </h3>
+                <span class="text-xs uppercase tracking-[.25em] text-white/70">NIORVEN · Food Design</span>
+                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">Hambúrgueres</h3>
               </div>
-
             </div>
 
-            <button
-              type="button"
-              class="portfolio-arrow prev"
-              aria-label="Imagem anterior"
-              data-prev="foodCarousel"
-            >
-              &#8592;
-            </button>
-
-            <button
-              type="button"
-              class="portfolio-arrow next"
-              aria-label="Próxima imagem"
-              data-next="foodCarousel"
-            >
-              &#8594;
-            </button>
+            <button type="button" class="portfolio-arrow prev" aria-label="Imagem anterior" data-prev="foodCarousel">&#8592;</button>
+            <button type="button" class="portfolio-arrow next" aria-label="Próxima imagem" data-next="foodCarousel">&#8594;</button>
 
           </div>
 
@@ -655,7 +471,6 @@
         <div class="portfolio-section">
 
           <div class="text-center mb-8">
-
             <span class="text-wine text-xs tracking-[.3em] uppercase">
               02 · Produtos
             </span>
@@ -667,93 +482,36 @@
             <p class="text-gray-500 text-sm mt-3">
               Imagens sofisticadas que destacam design, qualidade e identidade.
             </p>
-
           </div>
 
-          <div
-            class="portfolio-frame"
-            id="productCarousel"
-            aria-label="Portfólio de produtos"
-            aria-roledescription="carrossel"
-          >
+          <div class="portfolio-frame" id="productCarousel" aria-label="Portfólio de produtos" aria-roledescription="carrossel">
 
             <div class="portfolio-slide active" aria-hidden="false">
-
-              <img
-                src="iPhone%20Laranja.png"
-                alt="Smartphone premium na cor laranja em fotografia de produto"
-                loading="lazy"
-              >
-
+              <img src="iPhone%20Laranja.png" alt="Smartphone premium na cor laranja em fotografia de produto" loading="lazy">
               <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
-                <span class="text-xs uppercase tracking-[.25em] text-white/70">
-                  NIORVEN · Product Design
-                </span>
-
-                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
-                  Tecnologia
-                </h3>
+                <span class="text-xs uppercase tracking-[.25em] text-white/70">NIORVEN · Product Design</span>
+                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">Tecnologia</h3>
               </div>
-
             </div>
 
             <div class="portfolio-slide" aria-hidden="true">
-
-              <img
-                src="Camiseta.png"
-                alt="Camiseta branca minimalista em ambiente sofisticado"
-                loading="lazy"
-              >
-
+              <img src="Camiseta.png" alt="Camiseta branca minimalista em ambiente sofisticado" loading="lazy">
               <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
-                <span class="text-xs uppercase tracking-[.25em] text-white/70">
-                  NIORVEN · Product Design
-                </span>
-
-                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
-                  Moda
-                </h3>
+                <span class="text-xs uppercase tracking-[.25em] text-white/70">NIORVEN · Product Design</span>
+                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">Moda</h3>
               </div>
-
             </div>
 
             <div class="portfolio-slide" aria-hidden="true">
-
-              <img
-                src="Rel%C3%B3gio.png"
-                alt="Relógio de pulso metálico com mostrador preto em fotografia premium"
-                loading="lazy"
-              >
-
+              <img src="Rel%C3%B3gio.png" alt="Relógio de pulso metálico com mostrador preto em fotografia premium" loading="lazy">
               <div class="absolute bottom-0 left-0 z-10 p-6 sm:p-10">
-                <span class="text-xs uppercase tracking-[.25em] text-white/70">
-                  NIORVEN · Product Design
-                </span>
-
-                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">
-                  Acessórios
-                </h3>
+                <span class="text-xs uppercase tracking-[.25em] text-white/70">NIORVEN · Product Design</span>
+                <h3 class="font-heading text-2xl sm:text-3xl font-semibold mt-2">Acessórios</h3>
               </div>
-
             </div>
 
-            <button
-              type="button"
-              class="portfolio-arrow prev"
-              aria-label="Imagem anterior"
-              data-prev="productCarousel"
-            >
-              &#8592;
-            </button>
-
-            <button
-              type="button"
-              class="portfolio-arrow next"
-              aria-label="Próxima imagem"
-              data-next="productCarousel"
-            >
-              &#8594;
-            </button>
+            <button type="button" class="portfolio-arrow prev" aria-label="Imagem anterior" data-prev="productCarousel">&#8592;</button>
+            <button type="button" class="portfolio-arrow next" aria-label="Próxima imagem" data-next="productCarousel">&#8594;</button>
 
           </div>
 
@@ -768,128 +526,47 @@
           </p>
 
         </div>
-
       </div>
     </section>
 
     <!-- NIORVEN ACADEMY -->
 
-    <section id="academy" class="py-24 sm:py-32 px-6">
+    <section id="academy" class="py-28 px-6 bg-[#101012] border-y border-white/5">
 
-      <div class="max-w-6xl mx-auto academy-content">
+      <div class="max-w-5xl mx-auto text-center">
 
-        <div class="text-center mb-16">
+        <span class="text-white/60 text-xs tracking-[.4em] uppercase">
+          Conhecimento para negócios
+        </span>
 
-          <span class="text-gray-400 text-xs tracking-[.4em] uppercase">
-            Uma nova experiência de aprendizado
-          </span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-semibold mt-5">
+          NIORVEN <span class="text-white">ACADEMY.</span>
+        </h2>
 
-          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-semibold mt-6">
-            NIORVEN <span class="text-white">ACADEMY.</span>
-          </h2>
+        <p class="text-gray-400 mt-5 max-w-xl mx-auto leading-relaxed">
+          Aprenda, evolua e desenvolva novas habilidades com conteúdos
+          práticos criados para transformar conhecimento em resultados.
+        </p>
 
-          <p class="text-gray-400 text-sm sm:text-base mt-5 max-w-xl mx-auto leading-relaxed">
-            Conhecimento, estratégia e novas possibilidades
-            para quem deseja desenvolver sua presença digital.
-          </p>
-
-          <div class="w-16 h-px bg-white/40 mx-auto mt-8"></div>
-
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-          <!-- IMAGEM DO CURSO -->
-
+        <div class="mt-14">
           <a
             href="https://pay.cakto.com.br/etkdivt_1312649"
             target="_blank"
             rel="noopener noreferrer"
-            class="academy-image-link"
-            aria-label="Conhecer o curso Instagram Profissional do Zero"
+            class="academy-card"
+            aria-label="Comprar o curso Instagram Profissional do Zero"
           >
-
             <img
-              src="Curso%20Completo%20Instagram%20Profissional(1).png"
-              alt="NIORVEN Academy — Curso completo Instagram Profissional do Zero"
+              src="Curso Completo Instagram Profissional(2).png"
+              alt="NIORVEN Academy — Curso Instagram Profissional do Zero"
               loading="lazy"
             >
-
           </a>
-
-          <!-- INFORMAÇÕES DO CURSO -->
-
-          <div class="text-center md:text-left">
-
-            <span class="inline-block text-gray-400 text-xs tracking-[.3em] uppercase border border-white/20 rounded-full px-5 py-2">
-              Curso completo
-            </span>
-
-            <h3 class="font-heading text-3xl sm:text-4xl font-bold leading-tight mt-7">
-              Instagram
-              <span class="text-gray-400">Profissional</span>
-              <span class="block">do Zero.</span>
-            </h3>
-
-            <p class="text-gray-400 text-sm sm:text-base leading-relaxed mt-6">
-              Aprenda a transformar seu Instagram em um perfil
-              profissional, organizar sua marca e fortalecer
-              a presença digital do seu negócio.
-            </p>
-
-            <div class="flex flex-col gap-4 mt-9 items-center md:items-start">
-
-              <div class="academy-feature">
-                <span class="academy-feature-icon">01</span>
-                <span>Estratégia e organização do perfil</span>
-              </div>
-
-              <div class="academy-feature">
-                <span class="academy-feature-icon">02</span>
-                <span>Conteúdo e comunicação profissional</span>
-              </div>
-
-              <div class="academy-feature">
-                <span class="academy-feature-icon">03</span>
-                <span>Exemplos práticos e plano de ação</span>
-              </div>
-
-              <div class="academy-feature">
-                <span class="academy-feature-icon">04</span>
-                <span>Material digital para estudar no seu ritmo</span>
-              </div>
-
-            </div>
-
-            <a
-              href="https://pay.cakto.com.br/etkdivt_1312649"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="academy-cta mt-10 px-8 py-4 rounded-full text-xs font-bold tracking-[.15em]"
-            >
-              <span>CONHECER O CURSO</span>
-              <span aria-hidden="true">→</span>
-            </a>
-
-            <p class="text-gray-600 text-xs mt-5">
-              Acesse a página oficial de compra com segurança.
-            </p>
-
-          </div>
-
         </div>
 
-        <div class="text-center mt-20 pt-9 border-t border-white/10">
-
-          <p class="font-heading text-sm tracking-[.35em] uppercase text-white">
-            NIORVEN ACADEMY
-          </p>
-
-          <p class="text-gray-600 text-xs tracking-widest mt-3">
-            CONHECIMENTO PARA NEGÓCIOS.
-          </p>
-
-        </div>
+        <p class="text-gray-500 text-xs tracking-wider mt-7">
+          CLIQUE NA CAPA PARA CONHECER O CURSO
+        </p>
 
       </div>
     </section>
@@ -944,19 +621,11 @@
 
       <div class="flex items-center gap-5 text-gray-500 text-xs">
 
-        <a
-          href="mailto:niorvensupport@gmail.com"
-          class="hover:text-white transition"
-        >
+        <a href="mailto:niorvensupport@gmail.com" class="hover:text-white transition">
           Support
         </a>
 
-        <a
-          href="https://instagram.com/niorven.studio"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-white transition"
-        >
+        <a href="https://instagram.com/niorven.studio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
           Instagram
         </a>
 
@@ -969,15 +638,13 @@
     </div>
   </footer>
 
-  <!-- FUNCIONAMENTO DOS CARROSSEIS E ANIMAÇÃO DA ACADEMY -->
+  <!-- FUNCIONAMENTO DOS CARROSSEIS -->
 
   <script>
-
     document.getElementById('year').textContent =
       new Date().getFullYear();
 
     function initializeCarousel(carouselId) {
-
       const carousel = document.getElementById(carouselId);
 
       if (!carousel) return;
@@ -990,8 +657,6 @@
         `[data-dots="${carouselId}"]`
       );
 
-      if (!dotsContainer) return;
-
       const dots = Array.from(
         dotsContainer.querySelectorAll('.portfolio-dot')
       );
@@ -999,27 +664,16 @@
       let currentSlide = 0;
 
       function showSlide(index) {
-
-        currentSlide =
-          (index + slides.length) % slides.length;
+        currentSlide = (index + slides.length) % slides.length;
 
         slides.forEach((slide, i) => {
-
           const active = i === currentSlide;
-
           slide.classList.toggle('active', active);
-
-          slide.setAttribute(
-            'aria-hidden',
-            String(!active)
-          );
-
+          slide.setAttribute('aria-hidden', String(!active));
         });
 
         dots.forEach((dot, i) => {
-
           const active = i === currentSlide;
-
           dot.classList.toggle('active', active);
 
           if (active) {
@@ -1027,9 +681,7 @@
           } else {
             dot.removeAttribute('aria-current');
           }
-
         });
-
       }
 
       carousel.querySelector('[data-next]').addEventListener(
@@ -1043,16 +695,10 @@
       );
 
       dots.forEach((dot, index) => {
-
-        dot.addEventListener(
-          'click',
-          () => showSlide(index)
-        );
-
+        dot.addEventListener('click', () => showSlide(index));
       });
 
       carousel.addEventListener('keydown', (event) => {
-
         if (event.key === 'ArrowRight') {
           showSlide(currentSlide + 1);
         }
@@ -1060,51 +706,13 @@
         if (event.key === 'ArrowLeft') {
           showSlide(currentSlide - 1);
         }
-
       });
 
       carousel.setAttribute('tabindex', '0');
-
     }
 
     initializeCarousel('foodCarousel');
     initializeCarousel('productCarousel');
-
-    /* ANIMAÇÃO DE ENTRADA DA NIORVEN ACADEMY */
-
-    const academySection = document.getElementById('academy');
-
-    if ('IntersectionObserver' in window) {
-
-      const academyObserver = new IntersectionObserver(
-        (entries, observer) => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              academySection.classList.add('is-visible');
-
-              observer.unobserve(academySection);
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-      academyObserver.observe(academySection);
-
-    } else {
-
-      academySection.classList.add('is-visible');
-
-    }
-
   </script>
 
 </body>
