@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B0B0D">
-  <meta name="description" content="NIORVEN — Imagens publicitárias premium para alimentos, produtos e marcas.">
+  <meta name="description" content="NIORVEN — Imagens publicitárias premium para alimentos, produtos e marcas. Conheça também a NIORVEN Academy.">
 
   <title>NIORVEN — Criatividade que impulsiona</title>
 
@@ -38,6 +38,7 @@
   <style>
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -163,6 +164,144 @@
       margin-bottom: 90px;
     }
 
+    /* NIORVEN ACADEMY */
+
+    #academy {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at 75% 45%,
+          rgba(255,255,255,.045),
+          transparent 55%
+        ),
+        #0B0B0D;
+      border-top: 1px solid rgba(255,255,255,.07);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .academy-content {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
+    }
+
+    #academy.is-visible .academy-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .academy-image-link {
+      display: block;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #050505;
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow: 0 25px 80px rgba(0,0,0,.55);
+      transition:
+        transform .6s cubic-bezier(.2,.7,.2,1),
+        border-color .4s ease,
+        box-shadow .5s ease;
+    }
+
+    .academy-image-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.13),
+        transparent 35%,
+        transparent 70%,
+        rgba(255,255,255,.08)
+      );
+      opacity: .35;
+      transition: opacity .5s ease;
+      pointer-events: none;
+    }
+
+    .academy-image-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .5s ease;
+    }
+
+    .academy-image-link:hover {
+      transform: translateY(-9px) scale(1.015);
+      border-color: rgba(255,255,255,.45);
+      box-shadow:
+        0 35px 90px rgba(0,0,0,.7),
+        0 0 35px rgba(255,255,255,.07);
+    }
+
+    .academy-image-link:hover img {
+      transform: scale(1.035);
+      filter: brightness(1.08);
+    }
+
+    .academy-image-link:hover::after {
+      opacity: .8;
+    }
+
+    .academy-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      overflow: hidden;
+      background: #F5F5F5;
+      color: #0B0B0D;
+      border: 1px solid #F5F5F5;
+      transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .academy-cta:hover {
+      background: transparent;
+      color: #FFFFFF;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255,255,255,.09);
+    }
+
+    .academy-cta span:last-child {
+      transition: transform .3s ease;
+    }
+
+    .academy-cta:hover span:last-child {
+      transform: translateX(5px);
+    }
+
+    .academy-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #C7C7C7;
+      font-size: 13px;
+    }
+
+    .academy-feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      color: white;
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+
     @media (max-width: 640px) {
       .portfolio-frame {
         aspect-ratio: 4 / 5;
@@ -181,16 +320,30 @@
       .portfolio-arrow.next {
         right: 12px;
       }
+
+      .academy-image-link {
+        max-width: 390px;
+        margin: 0 auto;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .portfolio-slide,
-      .portfolio-dot {
+      .portfolio-dot,
+      .academy-content,
+      .academy-image-link,
+      .academy-image-link img,
+      .academy-cta {
         transition: none;
       }
 
       html {
         scroll-behavior: auto;
+      }
+
+      .academy-content {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -212,6 +365,7 @@
         <a href="#sobre" class="hover:text-white transition">Sobre</a>
         <a href="#servicos" class="hover:text-white transition">Serviços</a>
         <a href="#portfolio" class="hover:text-white transition">Portfólio</a>
+        <a href="#academy" class="text-white hover:text-gray-300 transition">NIORVEN Academy</a>
       </div>
 
     </nav>
@@ -404,8 +558,6 @@
             aria-roledescription="carrossel"
           >
 
-            <!-- CAFÉ -->
-
             <div class="portfolio-slide active" aria-hidden="false">
 
               <img
@@ -426,8 +578,6 @@
 
             </div>
 
-            <!-- AÇAÍ -->
-
             <div class="portfolio-slide" aria-hidden="true">
 
               <img
@@ -447,8 +597,6 @@
               </div>
 
             </div>
-
-            <!-- HAMBÚRGUER -->
 
             <div class="portfolio-slide" aria-hidden="true">
 
@@ -491,11 +639,9 @@
           </div>
 
           <div class="flex justify-center items-center gap-3 mt-7" data-dots="foodCarousel">
-
             <button class="portfolio-dot active" type="button" aria-label="Ir para café"></button>
             <button class="portfolio-dot" type="button" aria-label="Ir para açaí"></button>
             <button class="portfolio-dot" type="button" aria-label="Ir para hambúrguer"></button>
-
           </div>
 
           <p class="text-center text-gray-600 text-xs mt-5 tracking-wide">
@@ -531,8 +677,6 @@
             aria-roledescription="carrossel"
           >
 
-            <!-- IPHONE -->
-
             <div class="portfolio-slide active" aria-hidden="false">
 
               <img
@@ -553,8 +697,6 @@
 
             </div>
 
-            <!-- CAMISETA -->
-
             <div class="portfolio-slide" aria-hidden="true">
 
               <img
@@ -574,8 +716,6 @@
               </div>
 
             </div>
-
-            <!-- RELÓGIO -->
 
             <div class="portfolio-slide" aria-hidden="true">
 
@@ -618,15 +758,135 @@
           </div>
 
           <div class="flex justify-center items-center gap-3 mt-7" data-dots="productCarousel">
-
             <button class="portfolio-dot active" type="button" aria-label="Ir para tecnologia"></button>
             <button class="portfolio-dot" type="button" aria-label="Ir para moda"></button>
             <button class="portfolio-dot" type="button" aria-label="Ir para acessórios"></button>
-
           </div>
 
           <p class="text-center text-gray-600 text-xs mt-5 tracking-wide">
             Explore nossos exemplos de produtos
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NIORVEN ACADEMY -->
+
+    <section id="academy" class="py-24 sm:py-32 px-6">
+
+      <div class="max-w-6xl mx-auto academy-content">
+
+        <div class="text-center mb-16">
+
+          <span class="text-gray-400 text-xs tracking-[.4em] uppercase">
+            Uma nova experiência de aprendizado
+          </span>
+
+          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-semibold mt-6">
+            NIORVEN <span class="text-white">ACADEMY.</span>
+          </h2>
+
+          <p class="text-gray-400 text-sm sm:text-base mt-5 max-w-xl mx-auto leading-relaxed">
+            Conhecimento, estratégia e novas possibilidades
+            para quem deseja desenvolver sua presença digital.
+          </p>
+
+          <div class="w-16 h-px bg-white/40 mx-auto mt-8"></div>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          <!-- IMAGEM DO CURSO -->
+
+          <a
+            href="https://pay.cakto.com.br/etkdivt_1312649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="academy-image-link"
+            aria-label="Conhecer o curso Instagram Profissional do Zero"
+          >
+
+            <img
+              src="Curso%20Completo%20Instagram%20Profissional(1).png"
+              alt="NIORVEN Academy — Curso completo Instagram Profissional do Zero"
+              loading="lazy"
+            >
+
+          </a>
+
+          <!-- INFORMAÇÕES DO CURSO -->
+
+          <div class="text-center md:text-left">
+
+            <span class="inline-block text-gray-400 text-xs tracking-[.3em] uppercase border border-white/20 rounded-full px-5 py-2">
+              Curso completo
+            </span>
+
+            <h3 class="font-heading text-3xl sm:text-4xl font-bold leading-tight mt-7">
+              Instagram
+              <span class="text-gray-400">Profissional</span>
+              <span class="block">do Zero.</span>
+            </h3>
+
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed mt-6">
+              Aprenda a transformar seu Instagram em um perfil
+              profissional, organizar sua marca e fortalecer
+              a presença digital do seu negócio.
+            </p>
+
+            <div class="flex flex-col gap-4 mt-9 items-center md:items-start">
+
+              <div class="academy-feature">
+                <span class="academy-feature-icon">01</span>
+                <span>Estratégia e organização do perfil</span>
+              </div>
+
+              <div class="academy-feature">
+                <span class="academy-feature-icon">02</span>
+                <span>Conteúdo e comunicação profissional</span>
+              </div>
+
+              <div class="academy-feature">
+                <span class="academy-feature-icon">03</span>
+                <span>Exemplos práticos e plano de ação</span>
+              </div>
+
+              <div class="academy-feature">
+                <span class="academy-feature-icon">04</span>
+                <span>Material digital para estudar no seu ritmo</span>
+              </div>
+
+            </div>
+
+            <a
+              href="https://pay.cakto.com.br/etkdivt_1312649"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="academy-cta mt-10 px-8 py-4 rounded-full text-xs font-bold tracking-[.15em]"
+            >
+              <span>CONHECER O CURSO</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <p class="text-gray-600 text-xs mt-5">
+              Acesse a página oficial de compra com segurança.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="text-center mt-20 pt-9 border-t border-white/10">
+
+          <p class="font-heading text-sm tracking-[.35em] uppercase text-white">
+            NIORVEN ACADEMY
+          </p>
+
+          <p class="text-gray-600 text-xs tracking-widest mt-3">
+            CONHECIMENTO PARA NEGÓCIOS.
           </p>
 
         </div>
@@ -709,7 +969,7 @@
     </div>
   </footer>
 
-  <!-- FUNCIONAMENTO DOS DOIS CARROSSEIS -->
+  <!-- FUNCIONAMENTO DOS CARROSSEIS E ANIMAÇÃO DA ACADEMY -->
 
   <script>
 
@@ -729,6 +989,8 @@
       const dotsContainer = document.querySelector(
         `[data-dots="${carouselId}"]`
       );
+
+      if (!dotsContainer) return;
 
       const dots = Array.from(
         dotsContainer.querySelectorAll('.portfolio-dot')
@@ -807,6 +1069,41 @@
 
     initializeCarousel('foodCarousel');
     initializeCarousel('productCarousel');
+
+    /* ANIMAÇÃO DE ENTRADA DA NIORVEN ACADEMY */
+
+    const academySection = document.getElementById('academy');
+
+    if ('IntersectionObserver' in window) {
+
+      const academyObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              academySection.classList.add('is-visible');
+
+              observer.unobserve(academySection);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      academyObserver.observe(academySection);
+
+    } else {
+
+      academySection.classList.add('is-visible');
+
+    }
 
   </script>
 
